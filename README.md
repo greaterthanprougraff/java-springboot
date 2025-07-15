@@ -1,4 +1,10 @@
 # Latest Updates
+## Day 3
+Added unit tests using JUnit. This was done by utilizing these features:
+- JUnit - unit testing framework for Java.
+- MockMvc - provides mocking for testing Spring applications.
+- @SpringBootTest - simulates running a Spring Boot application and is used for testing.
+
 ## Day 2
 Added CRUD operations in a new controller file (GreetingController.java). The controller uses the below Spring annotations:
 - @RestController - indicates GreetingController is a REST controller.

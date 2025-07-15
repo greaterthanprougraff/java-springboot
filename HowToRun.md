@@ -31,3 +31,6 @@ One thing to note is that ID and name are both required. This PUT command is for
 
 ### DELETE Requests
 To run a PUT request you will be using something such as CURL, Postman, or Insomnia. You will need to set your HTTP Request to PUT. Your URL will be set to http://localhost:8080/greeting/{id}. So for deleting id 0 it would look like this: http://localhost:8080/greeting/0. No body is required. Once ran it will delete the name associated with the id if there is a name attached to it.
+
+## Unit Tests
+Unit tests can be run in the test folder. Each java file has a corresponding unit test file with it. Tests can be run individually by pressing the play button or all of them with the play button in the top right.
