@@ -1,5 +1,9 @@
 package com.example.demo.model;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class NameEntry {
     private Integer id;
     private String name;
@@ -11,19 +15,4 @@ public class NameEntry {
         this.name = name;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
