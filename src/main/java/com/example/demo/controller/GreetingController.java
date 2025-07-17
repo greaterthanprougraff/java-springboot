@@ -3,11 +3,13 @@ package com.example.demo.controller;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.example.demo.model.NameEntry;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
+@Slf4j
 @RestController
 @RequestMapping("/greeting")
 public class GreetingController {
@@ -18,6 +20,7 @@ public class GreetingController {
     // GET /greeting/{id}
     @GetMapping("/{id}")
     public ResponseEntity<?> getGreeting(@PathVariable int id) {
+        log.info("Fetching greeting for ID: {}", id);
         NameEntry entry = names.get(id);
         if (entry != null) {
             return ResponseEntity.ok("Hello, " + entry.getName() + "!");
@@ -29,6 +32,7 @@ public class GreetingController {
     // POST /greeting
     @PostMapping
     public ResponseEntity<?> postGreeting(@RequestBody NameEntry payload) {
+        log.info("Received POST with payload: {}", payload);
         String name = payload.getName();
         Integer id = payload.getId();
 
@@ -55,6 +59,7 @@ public class GreetingController {
     // PUT /greeting
     @PutMapping
     public ResponseEntity<?> putGreeting(@RequestBody NameEntry payload) {
+        log.info("Received PUT with payload: {}", payload);
         int id = payload.getId();
         String newName = payload.getName();
         if (newName == null || newName.isEmpty()) {
@@ -72,6 +77,7 @@ public class GreetingController {
     // DELETE /greeting/{id}
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteGreeting(@PathVariable int id) {
+        log.info("Deleting greeting for ID: {}", id);
         NameEntry entry = names.remove(id);
         if (entry != null) {
             return ResponseEntity.ok("Name for ID " + id + " deleted.");

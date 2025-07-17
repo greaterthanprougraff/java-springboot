@@ -1,4 +1,11 @@
 # Latest Updates
+## Day 4
+Added Lombok and logging features. Here is a breakdown of what was added:
+### Lombok
+- @Getter - adds getter capabilities for constructor, reducing code required.
+- @Setter - adds setter capabilities for constructor, reducing code required.
+### Logger
+- @Slf4j - adds logging capabilities to log all major actions done. This makes tracking actions much easier to follow.
 ## Day 3
 Added unit tests using JUnit. This was done by utilizing these features:
 - JUnit - unit testing framework for Java.
